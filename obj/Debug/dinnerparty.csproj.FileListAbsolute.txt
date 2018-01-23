@@ -1,0 +1,10 @@
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\bin\Debug\dinnerparty.exe.config
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\bin\Debug\dinnerparty.exe
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\bin\Debug\dinnerparty.pdb
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\obj\Debug\dinnerparty.csprojResolveAssemblyReference.cache
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\obj\Debug\dinnerparty.Form1.resources
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\obj\Debug\dinnerparty.Properties.Resources.resources
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\obj\Debug\dinnerparty.csproj.GenerateResource.Cache
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\obj\Debug\dinnerparty.csproj.CoreCompileInputs.cache
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\obj\Debug\dinnerparty.exe
+C:\Users\dmckearney\source\repos\dinnerparty\dinnerparty\obj\Debug\dinnerparty.pdb
