@@ -2,18 +2,13 @@
 
 namespace dinnerparty
 {
-    class BirthdayParty
+    class BirthdayParty :Party
     {
-        public const int CostOfFoodPerPerson = 25;
-
-        public decimal CostOfDecorations = 0;
-        private bool fancyDecorations;
         public int CakeSize;
 
         public BirthdayParty(int numberOfPeople, bool fancyDecorations, string cakeWriting)
+            : base(numberOfPeople, fancyDecorations)
         {
-            this.numberOfPeople = numberOfPeople;
-            this.fancyDecorations = fancyDecorations;
             CalculateCakeSize();
             this.CakeWriting = cakeWriting;
             CalculateCostOfDecorations(fancyDecorations);
@@ -49,9 +44,9 @@ namespace dinnerparty
             }
 
         }
-        public decimal CalculateCost()
+        public override decimal CalculateCost()
         {
-            decimal TotalCost = CostOfDecorations + (CostOfFoodPerPerson * NumberOfPeople);
+            decimal TotalCost = CostOfDecorations * NumberOfPeople;
             decimal CakeCost;
             if (CakeSize == 8)
                 CakeCost = 40M + CakeWriting.Length * .25M;
@@ -60,25 +55,16 @@ namespace dinnerparty
             return TotalCost + CakeCost;
         }
         private int numberOfPeople;
-        public int NumberOfPeople
+
+        public override int NumberOfPeople
         {
             get { return numberOfPeople; }
             set
             {
                 numberOfPeople = value;
-                CalculateCostOfDecorations(fancyDecorations);
                 CalculateCakeSize();
                 this.CakeWriting = cakeWriting;
             }
         }
-        public void CalculateCostOfDecorations(bool fancy)
-        {
-            fancyDecorations = fancy;
-            if (fancy)
-                CostOfDecorations = (NumberOfPeople * 15.00M) + 50M;
-            else
-                CostOfDecorations = (NumberOfPeople * 7.50M) + 30M;
-        }
-
     }
 }

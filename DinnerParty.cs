@@ -1,18 +1,19 @@
 ﻿namespace dinnerparty
 {
-    class DinnerParty
+    class DinnerParty : Party
     {
-        public const int CostOfFoodPerPerson = 25;
-        private int NumberofPeople;
         public decimal CostOfBeveragesPerPerson;
-        public decimal CostOfDecorations = 0;
-        private bool fancyDecorations = false;
+        // only thing that is specific to this class i.e booze
 
-        public void SetNumberOfPeople(int peoples)
+
+        public DinnerParty(int numberOfPeople, bool healthyOption, bool Fancydecorations)
+            : base(numberOfPeople, fancyDecorations)
         {
-            NumberofPeople = peoples;
+            SetHealthyOption(healthyOption);
+            CalculateCostOfDecorations(Fancydecorations);
         }
 
+        // constructor for dinner party yo
 
         public void SetHealthyOption(bool healthyOption)
         {
@@ -26,28 +27,15 @@
             }
         }
 
-        public void SetFancyOption(bool isFancy)
-        {
-            fancyDecorations = isFancy;
-        }
+        // this doesnt need touched it can stay
 
-        private void CalculateCostOfDecorations()
+        public virtual decimal CalculateCost(bool healthyOption)
         {
-            if (fancyDecorations)
-            {
-                CostOfDecorations = (NumberofPeople * 15.00M) + 50M;
-            }
-            else
-            {
-                CostOfDecorations = (NumberofPeople * 7.50M) + 30M;
-            }
-        }
+            DinnerParty dinner = new DinnerParty(5, true, true);
+            decimal cost1 = dinner.CalculateCost(true);
+            decimal cost2 = dinner.CalculateCost();
 
-        public decimal CalculateCost(bool healthyOption)
-        {
-            CalculateCostOfDecorations();
-
-            decimal totalCost = CostOfDecorations + ((CostOfBeveragesPerPerson + CostOfFoodPerPerson) * NumberofPeople);
+            decimal totalCost = CostOfDecorations + (CostOfBeveragesPerPerson * NumberofPeople);
 
             if (healthyOption)
             {
