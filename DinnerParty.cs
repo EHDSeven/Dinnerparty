@@ -3,14 +3,15 @@
     class DinnerParty : Party
     {
         public decimal CostOfBeveragesPerPerson;
+
         // only thing that is specific to this class i.e booze
 
 
-        public DinnerParty(int numberOfPeople, bool healthyOption, bool Fancydecorations)
-            : base(numberOfPeople, fancyDecorations)
+        public DinnerParty(int numberOfPeople, bool healthyOption, bool FancyDecorations)
+            :base(numberOfPeople, FancyDecorations)
         {
             SetHealthyOption(healthyOption);
-            CalculateCostOfDecorations(Fancydecorations);
+            CalculateCostOfDecorations(FancyDecorations);
         }
 
         // constructor for dinner party yo
@@ -35,7 +36,7 @@
             decimal cost1 = dinner.CalculateCost(true);
             decimal cost2 = dinner.CalculateCost();
 
-            decimal totalCost = CostOfDecorations + (CostOfBeveragesPerPerson * NumberofPeople);
+            decimal totalCost = CostOfDecorations + (CostOfBeveragesPerPerson * NumberOfPeople);
 
             if (healthyOption)
             {

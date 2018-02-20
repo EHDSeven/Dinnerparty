@@ -5,13 +5,13 @@ namespace dinnerparty
 {
     public partial class Form1 : Form
     {
+        
         DinnerParty dinnerParty;
         BirthdayParty birthdayParty;
         public Form1()
         {
             InitializeComponent();
-            dinnerParty = new DinnerParty();
-            dinnerParty.SetNumberOfPeople(5);
+
             dinnerParty.SetHealthyOption(healthyOption.Checked);
             DisplayDinnerPartyCost();
 
@@ -33,13 +33,13 @@ namespace dinnerparty
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            dinnerParty.SetNumberOfPeople((int)numericUpDown1.Value);
+            dinnerParty.numberOfPeople((int)numericUpDown1.Value);
             DisplayDinnerPartyCost();
         }
 
         private void fancyDec_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.SetFancyOption(CheckboxFancyDec.Checked);
+            dinnerParty.CalculateCost(CheckboxFancyDec.Checked);
             DisplayDinnerPartyCost();
         }
 

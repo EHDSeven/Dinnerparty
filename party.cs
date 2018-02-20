@@ -15,7 +15,7 @@
             this.fancyDecorations = fancyDecorations;
         }
         // This is a contsructor that the dinner and birthday party did previosly and will inherit
-
+        
         private int numberOfPeople;
         public virtual int NumberOfPeople
         {
@@ -40,9 +40,9 @@
 
         public virtual decimal CalculateCost()
         {
-            decimal TotalCost = CostOfDecorations + (CostOfFoodPerPerson * NumberofPeople);
+            decimal TotalCost = CostOfDecorations + (CostOfFoodPerPerson * NumberOfPeople);
 
-            if (NumberofPeople == 12)
+            if (NumberOfPeople == 12)
             {
                 return TotalCost + 100m;
             }

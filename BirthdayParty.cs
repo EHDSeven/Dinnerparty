@@ -54,14 +54,13 @@ namespace dinnerparty
                 CakeCost = 75M + CakeWriting.Length * .25M;
             return TotalCost + CakeCost;
         }
-        private int numberOfPeople;
-
+        
         public override int NumberOfPeople
         {
-            get { return numberOfPeople; }
+            get { return base.NumberOfPeople; }
             set
             {
-                numberOfPeople = value;
+                base.NumberOfPeople = value;
                 CalculateCakeSize();
                 this.CakeWriting = cakeWriting;
             }
